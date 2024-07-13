@@ -17,9 +17,9 @@ const Hero = () => {
               </span>
             </p>
 
-            <button className="w-full px-6 py-2 mt-6 text-sm tracking-wider text-white transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-              Refer now
-            </button>
+            <button className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-500 transition">
+            Refer Now
+          </button>
           </div>
         </div>
 
