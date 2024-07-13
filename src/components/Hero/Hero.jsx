@@ -1,28 +1,30 @@
-import React from 'react';
-import { Button, Typography, Box } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { LinkOffOutlined } from '@mui/icons-material';
+import React from "react";
 
-const Hero= () => {
+const Hero = () => {
   return (
-    <div className="bg-gray-100 min-h-screen">
-    <div>
-        <LinkOffOutlined>Refer</LinkOffOutlined>
-    </div>
-      <div className="container mx-auto py-16 px-6 flex flex-col-reverse lg:flex-row items-center">
-        <div className="lg:w-1/2">
-          <Typography variant="h2" className="font-bold mb-4">Let’s Learn & Earn</Typography>
-          <Typography variant="body1" className="mb-6">Get a chance to win up-to <span className="text-blue-600">Rs. 15,000</span></Typography>
-          <Button variant="contained" className="bg-blue-600 text-white">Refer Now</Button>
-        </div>
-        <div className="lg:w-1/2 flex justify-center lg:justify-end relative">
-          <img src="/Anniversary .png" alt="Hero" className="max-w-full h-auto relative z-10" />
-          <div className="absolute top-0 left-0 w-full h-full z-0">
-            <img src="/Money.png" alt="Money" className="absolute top-0 left-0" />
-            <img src="/Money.png" alt="Money" className="absolute top-0 right-0" />
-            <img src="/Money.png" alt="Money" className="absolute bottom-0 left-0" />
-            <img src="/Money.png" alt="Money" className="absolute bottom-0 right-0" />
+    <div className="container bg-[#EEF5FF] rounded-md mx-auto">
+      <div className="items-center  lg:flex mx-12">
+        <div className="w-full lg:w-1/2">
+          <div className="lg:max-w-lg">
+            <h1 className="text-3xl font-semibold text-gray-800 lg:text-7xl">
+              <span className="">Let’s Learn <br /> & Earn</span>
+            </h1>
+
+            <p className="mt-3 text-2xl">
+              Get a chance to win up-to <br />{" "}
+              <span className="text-2xl font-semibold text-blue-500">
+                Rs. 15,000
+              </span>
+            </p>
+
+            <button className="w-full px-6 py-2 mt-6 text-sm tracking-wider text-white transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+              Refer now
+            </button>
           </div>
+        </div>
+
+        <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+          <img src="/Anniversary .png" alt="" />
         </div>
       </div>
     </div>

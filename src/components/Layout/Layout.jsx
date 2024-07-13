@@ -1,14 +1,20 @@
-import Hero from "../Hero/Hero";
+import Home from "../Home/Home";
 import Navbar from "../Navbar/Navbar";
 
 const Layout = () => {
-    return (
-        <div className="">
-            <Navbar></Navbar>
-            <Hero></Hero>
-            
-        </div>
-    );
+  return (
+    <div className="max-w-7xl m-auto">
+      <header>
+        <Navbar></Navbar>
+      </header>
+      <main>
+        <Home></Home>
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+  );
 };
 
 export default Layout;

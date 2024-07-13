@@ -1,111 +1,86 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import React, { useState } from "react";
 
-const drawerWidth = 240;
-const navItems = ["Refer & Earn", "Resources", "About us"];
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const Navbar = (props) => {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Accredian
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar component="nav" sx={{ boxShadow: "none",backgroundColor:"#fff" }}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block", color:"#000" } }}
-          >
-            Accredian
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#000" }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-        <Box >
-          <Button variant="contained" sx={{ backgroundColor: '#f9f5f4 ', color: '#000', boxShadow:"none" , marginRight:"10px"}}>Login</Button>
-          <Button variant="contained" color="primary">Try for free</Button>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
+    <nav className="relative bg-white ">
+      <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+        <div className="flex items-center justify-between">
+          <a href="#">
+            <img
+              className="w-auto h-6 sm:h-7"
+              src="/Link.png"
+              alt="logo"
+            />
+          </a>
+          <div className="flex lg:hidden">
+            <button
+              onClick={toggleMenu}
+              type="button"
+              className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+              aria-label="toggle menu"
+            >
+              {!isOpen ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 8h16M4 16h16"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+
+        <div
+          className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center ${
+            isOpen ? "translate-x-0 opacity-100" : "opacity-0 -translate-x-full"
+          }`}
         >
-          {drawer}
-        </Drawer>
-      </nav>
-    </Box>
+          <div className="flex flex-col space-x-4 md:flex-row md:mx-6 ">
+           <a href="">Refer & Earn</a>
+           <a href="">Resources</a>
+           <a href="">About Us</a>
+        
+          </div>
+
+          <div className="flex justify-center space-x-4 md:block">
+            <button className="bg-gray-200 px-4 py-3 rounded-md">Login</button>
+            <button className="bg-blue-500 text-white px-4 py-3 rounded-md">Try For Free</button>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
-};
-Navbar.propTypes = {
-  window: PropTypes.func,
 };
 
 export default Navbar;
