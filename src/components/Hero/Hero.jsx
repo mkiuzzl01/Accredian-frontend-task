@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import Refer_Form from "../Refer_Form/Refer_Form";
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  console.log(isModalOpen);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="container bg-[#EEF5FF] rounded-md mx-auto">
       <div className="items-center  lg:flex mx-12">
@@ -17,9 +23,10 @@ const Hero = () => {
               </span>
             </p>
 
-            <button className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-500 transition">
+            <button onClick={openModal} className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-500 transition">
             Refer Now
           </button>
+          <Refer_Form isOpen={isModalOpen} onRequestClose={closeModal}></Refer_Form>
           </div>
         </div>
 
