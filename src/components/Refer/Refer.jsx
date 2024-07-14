@@ -11,7 +11,7 @@ const Refer = () => {
   const closeModal = () => setIsModalOpen(false);
 
     return (
-        <section>
+        <section className="mt-10">
         <div className="container mx-auto bg-white z-0 text-center">
           <h2 className="text-3xl font-semibold mb-6">
             How Do I <span className="text-blue-500">Refer?</span>

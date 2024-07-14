@@ -16,12 +16,21 @@ const ReferModal = ({ isOpen, onRequestClose }) => {
     const info = {name,email,refereeName,refereeEmail};
 
     try {
-        const {data} = await axios.post('http://localhost:5000/refer_info',info);
+        const {data} = await axios.post('https://learn-and-earn.onrender.com/refer_info',info);
         if(data.message === "Data inserted successfully"){
           Swal.fire({
             position: "top",
             icon: "success",
-            title: "Refer info save in database",
+            title: "Refer info save to database",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          onRequestClose();
+        }else{
+          Swal.fire({
+            position: "top",
+            icon: "error",
+            title: "Something wrong",
             showConfirmButton: false,
             timer: 1500
           });
@@ -44,7 +53,7 @@ const ReferModal = ({ isOpen, onRequestClose }) => {
     <div
             type="button" 
             onClick={onRequestClose} 
-            className=" hover:text-red-600  font-bold px-2 py-1 rounded-full"
+            className=" hover:text-red-600  cursor-pointer font-bold px-2 py-1 rounded-full"
           >
             x
           </div>
