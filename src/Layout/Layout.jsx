@@ -1,10 +1,10 @@
-import Home from "../Home/Home";
-import Navbar from "../Navbar/Navbar";
+import Home from "../components/Home/Home";
+import Navbar from "../components/Navbar/Navbar";
 
 const Layout = () => {
   return (
     <div className="max-w-7xl m-auto">
-      <header>
+      <header className="sticky top-0 z-10">
         <Navbar></Navbar>
       </header>
       <main>

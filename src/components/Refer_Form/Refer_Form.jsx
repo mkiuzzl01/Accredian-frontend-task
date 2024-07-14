@@ -31,14 +31,16 @@ const ReferModal = ({ isOpen, onRequestClose }) => {
       className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50"
       overlayClassName="fixed inset-0 bg-black bg-opacity-50"
     >
-      <div className="bg-white p-6 rounded-lg w-80">
-      <button 
+      <div className="bg-white p-6 rounded-lg w-96">
+    <div className='flex justify-end'>
+    <div
             type="button" 
             onClick={onRequestClose} 
-            className="w-full hover:bg-gray-200 transition"
+            className=" hover:text-red-600  font-bold px-2 py-1 rounded-full"
           >
             x
-          </button>
+          </div>
+    </div>
         <h2 className="text-2xl font-bold mb-4">Refer a Friend</h2>
         <form onSubmit={handleSubmit}>
           <label className="block mb-2">

@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import Refer_Form from "../Refer_Form/Refer_Form";
 
 const Refer_Benefits = () => {
   const [benefits, setBenefits] = useState([]);
   const [allProgram, setAllProgram] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -27,7 +31,7 @@ const Refer_Benefits = () => {
   }, []);
 
   return (
-    <section className="container px-4 mx-auto">
+    <section className="container mt-24 px-4 mx-auto">
       <h2 className="font-medium text-2xl text-center">
         What Are The <span className="text-blue-600">Referral Benefits?</span>
       </h2>
@@ -77,22 +81,13 @@ const Refer_Benefits = () => {
           <table className="min-w-full bg-white">
             <thead className="bg-blue-300 text-blue-800">
               <tr className="divide-x divide-gray-700">
-                <th
-                  scope="col"
-                  className="py-3.5 px-4 font-semibold text-left"
-                >
+                <th scope="col" className="py-3.5 px-4 font-semibold text-left">
                   Programs
                 </th>
-                <th
-                  scope="col"
-                  className="py-3.5 px-4 font-semibold text-left"
-                >
+                <th scope="col" className="py-3.5 px-4 font-semibold text-left">
                   Referrer Bonus
                 </th>
-                <th
-                  scope="col"
-                  className="py-3.5 px-4 font-semibold text-left"
-                >
+                <th scope="col" className="py-3.5 px-4 font-semibold text-left">
                   Referral Bonus
                 </th>
               </tr>
@@ -120,7 +115,7 @@ const Refer_Benefits = () => {
       <div className="relative flex justify-end my-4">
         <button
           onClick={toggleDropdown}
-          className="relative z-10 flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md shadow focus:border-blue-500 focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring focus:outline-none"
+          className="relative flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md shadow focus:border-blue-500 focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring focus:outline-none"
         >
           <span className="mx-1">Show More</span>
           <svg
@@ -164,9 +159,16 @@ const Refer_Benefits = () => {
 
       {/* Refer button */}
       <div className="flex justify-center">
-        <button className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-500 transition">
+        <button
+          onClick={openModal}
+          className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-500 transition"
+        >
           Refer Now
         </button>
+        <Refer_Form
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+        ></Refer_Form>
       </div>
     </section>
   );
