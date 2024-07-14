@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import Modal from 'react-modal';
+import Swal from 'sweetalert2';
 
 Modal.setAppElement('#root');
 
@@ -17,7 +18,14 @@ const ReferModal = ({ isOpen, onRequestClose }) => {
     try {
         const {data} = await axios.post('http://localhost:5000/refer_info',info);
         if(data.message === "Data inserted successfully"){
-            alert("sent success")
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Refer info save in database",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          onRequestClose();
         }
     } catch (error) {
         console.log(error);
