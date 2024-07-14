@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "Program": "Professional Certificate in Data Science",
+      "ReferrerBonus": "$100",
+      "ReferralBonus": "$50"
+    },
+    {
+      "id": 2,
+      "Program": "Advanced Diploma in Digital Marketing",
+      "ReferrerBonus": "$150",
+      "ReferralBonus": "$75"
+    },
+    {
+      "id": 3,
+      "Program": "Executive MBA Program",
+      "ReferrerBonus": "$120",
+      "ReferralBonus": "$60"
+    },
+    {
+      "id": 4,
+      "Program": "Certified Blockchain Developer Course",
+      "ReferrerBonus": "$80",
+      "ReferralBonus": "$40"
+    },
+    {
+      "id": 5,
+      "Program": "UX/UI Design Bootcamp",
+      "ReferrerBonus": "$200",
+      "ReferralBonus": "$100"
+    },
+    {
+      "id": 6,
+      "Program": "Project Management Certification",
+      "ReferrerBonus": "$90",
+      "ReferralBonus": "$45"
+    },
+    {
+      "id": 7,
+      "Program": "Data Analytics Specialization",
+      "ReferrerBonus": "$110",
+      "ReferralBonus": "$55"
+    },
+    {
+      "id": 8,
+      "Program": "Cybersecurity Essentials Program",
+      "ReferrerBonus": "$130",
+      "ReferralBonus": "$65"
+    },
+    {
+      "id": 9,
+      "Program": "Digital Transformation Leadership",
+      "ReferrerBonus": "$170",
+      "ReferralBonus": "$85"
+    },
+    {
+      "id": 10,
+      "Program": "AI for Business Strategy",
+      "ReferrerBonus": "$140",
+      "ReferralBonus": "$70"
+    }
+  ]
+  

@@ -3,7 +3,6 @@ import Refer_Form from "../Refer_Form/Refer_Form";
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  console.log(isModalOpen);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
